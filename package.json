@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-baidu-push",
+  "version": "1.0.1",
+  "description": "baidu push",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhouzhongyuan/cordova-plugin-baidu-push.git"
+  },
+  "keywords": [
+    "baidu",
+    "push"
+  ],
+  "author": "zhongyuan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhouzhongyuan/cordova-plugin-baidu-push/issues"
+  },
+  "homepage": "https://github.com/zhouzhongyuan/cordova-plugin-baidu-push#readme"
+}

@@ -1,23 +1,26 @@
 # cordova-plugin-baidu-push
 百度云推送cordova插件
 
-#### 安装
+### 安装
 
 安装插件：
 
-	$ cordova plugin add cordova-plugin-baidu-push
+```javascript
+	cordova plugin add cordova-plugin-baidu-push
+```
 
 查看已安装插件：
 
-	$ cordova plugin ls
-
+```javascript
+	cordova plugin ls
+```
 
 删除插件：
+```javascript
+	cordova plugin rm cordova-plugin-baidu-push
+```
 
-	$ cordova plugin rm cordova-plugin-baidu-push
-
-
-#### 使用
+### 使用
 
 ##### 获取channelId
 
@@ -94,13 +97,13 @@ onbind,onunbind,onsettags,ondeltags,onlisttags,onmessage,onnotificationclicked,o
 
 2. 由于百度应用区分android与ios，APP端可以使用以下方法区分判断：
 
-#### 判断platform
+### 判断platform
 
 cordova.platformId
 
 {"android" | "ios"}
 
-#### 更多信息
+### 更多信息
 
 ##### Android开发环境导入--Eclipse
 导入路径：开发工程->platform->android
