@@ -90,14 +90,28 @@
           <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
         </intent-filter>
       </receiver>
+      
+      <!-- 适配Android N系统必需的ContentProvider声明，写权限包含应用包名-->
+        <provider
+            android:name="com.baidu.android.pushservice.PushInfoProvider"
+            android:authorities="$PACKAGE_NAME"
+            android:writePermission="baidu.push.permission.WRITE_PUSHINFOPROVIDER.$PACKAGE_NAME"
+            android:protectionLevel = "signature"
+            android:exported="true" />
+      
     </config-file>
 
     <source-file src="src/android/BaiduPush.java" target-dir="src/com/qdc/plugins/baidu" />
     <source-file src="src/android/BaiduPushReceiver.java" target-dir="src/com/qdc/plugins/baidu" />
-    <source-file src="libs/android/armeabi/libbdpush_V2_2.so" target-dir="libs/armeabi" />
-    <source-file src="libs/android/armeabi/libbdpush_V2_2.so" target-dir="libs/armeabi-v7a" />
-    <source-file src="libs/android/mips/libbdpush_V2_2.so" target-dir="libs/mips" />
-    <source-file src="libs/android/pushservice-4.4.1.88.jar" target-dir="libs" />
+    
+    <resource-file src="libs/android/pushservice-5.2.0.12.jar" target="libs/pushservice-5.2.0.12.jar"/>
+    <resource-file src="libs/android/arm64-v8a/libbdpush_V2_7.so" target="libs/arm64-v8a/libbdpush_V2_7.so"/>
+    <resource-file src="libs/android/armeabi/libbdpush_V2_7.so" target="libs/armeabi/libbdpush_V2_7.so"/>
+    <resource-file src="libs/android/armeabi-v7a/libbdpush_V2_7.so" target="libs/armeabi-v7a/libbdpush_V2_7.so"/>
+    <resource-file src="libs/android/mips/libbdpush_V2_7.so" target="libs/mips/libbdpush_V2_7.so"/>
+    <resource-file src="libs/android/mips64/libbdpush_V2_7.so" target="libs/mips64/libbdpush_V2_7.so"/>
+    <resource-file src="libs/android/x86/libbdpush_V2_7.so" target="libs/x86/libbdpush_V2_7.so"/>
+    <resource-file src="libs/android/x86_64/libbdpush_V2_7.so" target="libs/x86_64/libbdpush_V2_7.so"/>
   </platform>
 
     <!-- ios -->

@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import com.baidu.android.pushservice.PushConstants;
+import com.baidu.android.pushservice.PushSettings;
 import com.baidu.android.pushservice.PushManager;
 
 /**
@@ -58,9 +59,15 @@ public class BaiduPush extends CordovaPlugin {
 
             cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
-                	LOG.d(LOG_TAG, "PushManager#startWork");
-                    PushManager.startWork(cordova.getActivity().getApplicationContext(),
-                            PushConstants.LOGIN_TYPE_API_KEY, apiKey);
+                	try{
+                	    LOG.d(LOG_TAG, "PushManager#startWork");
+                        PushSettings.enableDebugMode(cordova.getActivity().getApplicationContext(), true);
+                        PushManager.startWork(cordova.getActivity().getApplicationContext(),
+                                PushConstants.LOGIN_TYPE_API_KEY, apiKey);
+                	}catch(Exception e){
+                	    e.printStackTrace();
+                	}
+                	
                 }
             });
             ret =  true;
